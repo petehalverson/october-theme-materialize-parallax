@@ -12,6 +12,3 @@ Replace `<theme>` with the name of your theme.
 `$ php artisan theme:use <name>`
 
 Where `<name>` is whatever you specified in `theme:install`.
-
-
-## Customize
