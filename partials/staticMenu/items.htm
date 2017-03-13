@@ -1,0 +1,9 @@
+[viewBag]
+==
+{% for item in items %}
+  {% if item.viewBag.isHidden == false %}
+    <li class="nav-section__item {{ item.isActive ? 'is-active' : '' }}">
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </li>
+  {% endif %}
+{% endfor %}

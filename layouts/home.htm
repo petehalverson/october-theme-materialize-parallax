@@ -1,5 +1,5 @@
-description = "Default layout"
-
+description = "Home layout"
+hideContentField = true
 [staticPage]
 ==
 <!DOCTYPE html>
@@ -35,8 +35,34 @@ description = "Default layout"
     {% endif %}
 
     <div class="container">
-        <div class="row">
-            {% page %}
+        <div class="section">
+            <div class="row">
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center red-text text-darken-4"><i class="material-icons">{{ icon_left }}</i></h2>
+                        <h5 class="center">{{ icon_left_headline }}</h5>
+                        <p class="light">{{ icon_left_subtext }}</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center red-text text-darken-4"><i class="material-icons">{{ icon_middle }}</i></h2>
+                        <h5 class="center">{{ icon_middle_headline }}</h5>
+                        <p class="light">{{ icon_middle_subtext }}</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center red-text text-darken-4"><i class="material-icons">{{ icon_right }}</i></h2>
+                        <h5 class="center">{{ icon_right_headline }}</h5>
+                        <p class="light">{{ icon_right_subtext }}</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -51,7 +77,7 @@ description = "Default layout"
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="{{ section.banner | media }}"></div>
+        <div class="parallax"><img src="{{ section.banner | mediathumb_resize('height', 700) }}"></div>
     </div>
     {% else %}
     <div class="container">
@@ -84,10 +110,23 @@ description = "Default layout"
 </body>
 </html>
 
+{variable name="banner" label="Banner" tab="Main Banner" type="mediafinder" mode="image" required="required" span="left"}{/variable}
 {variable name="headline" label="Headline" tab="Main Banner" type="text" span="left"}{/variable}
 {variable name="headline_color" label="Headline Color" tab="Main Banner" type="dropdown" options="black:Black | white:White" span="left"}{/variable}
-{variable name="banner" label="Banner" tab="Main Banner" type="mediafinder" mode="image" required="required" span="left"}{/variable}
 {variable name="banner_content" label="Banner Content" tab="Main Banner" size="small" type="richeditor"}{/variable}
+
+{variable name="icon_left" label="Icon (Left)" tab="Icon Blocks" type="text" comment="Icon codes: http://materializecss.com/icons.html" required="required"}{/variable}
+{variable name="icon_left_headline" label="Headline (Left)" tab="Icon Blocks" type="text" required="required"}{/variable}
+{variable name="icon_left_subtext" label="Subtext (Left)" tab="Icon Blocks" type="text" required="required"}{/variable}
+
+{variable name="icon_middle" label="Icon (Middle)" tab="Icon Blocks" type="text" required="required"}{/variable}
+{variable name="icon_middle_headline" label="Headline (Middle)" tab="Icon Blocks" type="text" required="required"}{/variable}
+{variable name="icon_middle_subtext" label="Subtext (Middle)" tab="Icon Blocks" type="text" required="required"}{/variable}
+
+{variable name="icon_right" label="Icon (Right)" tab="Icon Blocks" type="text" required="required"}{/variable}
+{variable name="icon_right_headline" label="Headline (Right)" tab="Icon Blocks" type="text" required="required"}{/variable}
+{variable name="icon_right_subtext" label="Subtext (Right)" tab="Icon Blocks" type="text" required="required"}{/variable}
+
 
 {repeater name="sections" label="" tab="Sections" prompt="Add another content section"}
   {variable name="title" label="Title" type="text"}{/variable}

@@ -1,5 +1,5 @@
-name: Materialize-Parallax
-author: Martin M.
-description: Materialize Parallax template for OctoberCMS.
-homepage: 'https://github.com/skydiver/october-theme-materialize-parallax'
-code: Materialize-Parallax
+name: Materialize Parallax w/ Pages
+author: Aspen Digital
+description: Materialize Parallax template for OctoberCMS w/ Pages support.
+homepage: 'https://github.com/petehalverson/october-theme-materialize-parallax'
+code: Materialize-Parallax-Pages
